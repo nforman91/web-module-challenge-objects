@@ -106,15 +106,11 @@ Write a function that creates an object with name, rating, feedback, add the new
 */
 
 function addReview(array, name, rating, feedback){
-  const newReview = {};
-    newReview.name = name, 
-    newReview.rating = rating,
-    newReview.feedback = feedback,
-  array.push(newReview);
+  array.push({name, rating, feedback});
   return array;
 }
 
-console.log('task 5', addReview(reviews, 'Daniela', 5, 'Beautiful atmosphere and wonderful vegan options!'));
+console.log('task 5', addReview(reviews, 'Daniela', 5, 'Beautiful atmosphere and wonderful vegan options!')); 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function to return a review based on the index of the review in the array.
@@ -150,7 +146,7 @@ Use the getLastReview function below to do the following:
 
 // array as a param - array[array.length - 1]?
 function getLastReview(array) {
-  return `${array[array.length - 1].name} gave a restaurant a ${array[array.length - 1].rating} star review, and their feedback was: ${array[array.length - 1].feedback}`;
+  return `${array[array.length - 1].name} gave the restaurant a ${array[array.length - 1].rating} star review, and their feedback was: ${array[array.length - 1].feedback}`;
 } 
 
 console.log('task 7', getLastReview(reviews));
@@ -172,9 +168,17 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
- function getReviewByRating(/* code here */) {
-    /* code here */
+ function getReviewByRating(array, rating) {
+   let myRating = [];
+   for(let i = 0; i < array.length; i++){
+     if(array[i].rating >= rating && array[i].rating < rating + 1){
+        myRating.push(array[i]);
+     }
+    }
+    return myRating;
   }
+
+  console.log('Stretch 1', getReviewByRating(reviews, 4));
 
   
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
@@ -190,9 +194,12 @@ Use the getLongReviews function below to do the following:
   ]
 */
 
-function getLongReviews(/* code here */) {
-    /* code here */
-  }
+// function getLongReviews(array) {
+//     const reviewList = [];
+//     for(let i = 0; i < array.length; i++)
+//       if(array[i].feedback.split(' ').length > 15)
+//       reviewList
+//   }
   
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 
