@@ -81,7 +81,8 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
-// this is not being tested
+
+console.log('task 3', reviews[5].feedback);
 
 
 
@@ -91,7 +92,7 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   2. log the reviews array to the console to check your work
 */
 reviews[7].feedback = 'this place is chill with really cool people, great for getting work done on weekdays';
-console.log(reviews);
+console.log('task 4', reviews[7].feedback);
 // not being tested 
 
 
@@ -105,9 +106,15 @@ Write a function that creates an object with name, rating, feedback, add the new
 */
 
 function addReview(array, name, rating, feedback){
-  array.push({name, rating, feedback});
+  const newReview = {};
+    newReview.name = name, 
+    newReview.rating = rating,
+    newReview.feedback = feedback,
+  array.push(newReview);
   return array;
 }
+
+console.log('task 5', addReview(reviews, 'Daniela', 5, 'Beautiful atmosphere and wonderful vegan options!'));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function to return a review based on the index of the review in the array.
@@ -146,6 +153,7 @@ function getLastReview(array) {
   return `${array[array.length - 1].name} gave a restaurant a ${array[array.length - 1].rating} star review, and their feedback was: ${array[array.length - 1].feedback}`;
 } 
 
+console.log('task 7', getLastReview(reviews));
 
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
